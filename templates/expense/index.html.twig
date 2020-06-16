@@ -12,7 +12,9 @@
                 <th>Title</th>
                 <th>Amount</th>
                 <th>Date</th>
-                <th>actions</th>
+                <th>Category</th>
+                <th>Method</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -22,6 +24,8 @@
                 <td>{{ expense.title }}</td>
                 <td>{{ expense.amount }}</td>
                 <td>{{ expense.date ? expense.date|date('Y-m-d') : '' }}</td>
+                <td>{{ expense.category }}</td>
+                <td>{{ expense.method }}</td>
                 <td>
                     <a href="{{ path('expense_show', {'id': expense.id}) }}">show</a>
                     <a href="{{ path('expense_edit', {'id': expense.id}) }}">edit</a>

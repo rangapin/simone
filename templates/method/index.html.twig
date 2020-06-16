@@ -11,7 +11,7 @@
                 <th>Id</th>
                 <th>Name</th>
                 <th>Description</th>
-                <th>actions</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -21,8 +21,8 @@
                 <td>{{ method.name }}</td>
                 <td>{{ method.description }}</td>
                 <td>
-                    <a href="{{ path('method_show', {'id': method.id}) }}">show</a>
-                    <a href="{{ path('method_edit', {'id': method.id}) }}">edit</a>
+                    <a href="{{ path('method_show', {'id': method.id}) }}">Show</a>
+                    <a href="{{ path('method_edit', {'id': method.id}) }}">Edit</a>
                 </td>
             </tr>
         {% else %}
