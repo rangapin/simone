@@ -3,9 +3,15 @@
 {% block title %}New Method{% endblock %}
 
 {% block body %}
+
+<div class="container">
+
+    {% include 'includes/_navbar.html.twig' %}
     <h1>Create new Method</h1>
 
     {{ include('method/_form.html.twig') }}
 
-    <a href="{{ path('method_index') }}">Back to list</a>
+    <a class="btn btn-primary" href="{{ path('method_index') }}">Back to list</a>
+</div>
+
 {% endblock %}

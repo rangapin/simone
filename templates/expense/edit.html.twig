@@ -3,11 +3,18 @@
 {% block title %}Edit Expense{% endblock %}
 
 {% block body %}
+    <div class="container">
+
+        {% include 'includes/_navbar.html.twig' %}
+
     <h1>Edit Expense</h1>
 
     {{ include('expense/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('expense_index') }}">Back to list</a>
+    <a class="btn btn-primary" href="{{ path('expense_index') }}">Back to list</a>
 
     {{ include('expense/_delete_form.html.twig') }}
+
+    </div>
+
 {% endblock %}
