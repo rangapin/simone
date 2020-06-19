@@ -7,13 +7,39 @@
 
     <div class="container">
 
-        {% include 'includes/_navbar.html.twig' %}
+            {% include 'includes/_navbar.html.twig' %}
 
-        <div id="div_chart"></div>
+        <div id="barchart_material" style="width: 800px; height: 500px;"></div>
 
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-        <script type="text/javascript"> {{ gc_draw(piechart, 'div_chart') }} </script>
+        <script type="text/javascript">
 
-    </div>
+            google.charts.load('current', {'packages':['bar']});
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                    ['Year', 'Expense'],
+                    ['2020', 1000],
+                    ['2021', 1170],
+                    ['2022', 500],
+                    ['2023', 660],
+                    ['2024', 900],
+                    ['2025', 1030]
+                ]);
+
+                var options = {
+                    chart: {
+                        title: 'Expenses Report',
+                    },
+                    bars: 'vertical' // Required for Material Bar Charts.
+                };
+
+                var chart = new google.charts.Bar(document.getElementById('barchart_material'));
+
+                chart.draw(data, google.charts.Bar.convertOptions(options));
+            }
+        </script>
+</div>
 {% endblock %}

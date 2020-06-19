@@ -16,11 +16,11 @@ class StatsController extends AbstractController
         $pieChart = new PieChart();
         $pieChart->getData()->setArrayToDataTable(
             [['Categories', 'Pie expense'],
-                ['Food', 11],
-                ['Eat',      2],
-                ['Commute',  2],
-                ['Watch TV', 2],
-                ['Sleep',    7]
+                ['2020',  1],
+                ['2021',  2],
+                ['2022',  3],
+                ['2023',  4],
+                ['2024',  5]
             ]
         );
         $pieChart->getOptions()->setTitle('My expenses report');
