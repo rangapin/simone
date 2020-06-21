@@ -3,9 +3,11 @@
 {% block title %}SIMONE{% endblock %}
 
 {% block body %}
+
     {% for flashError in app.flashes('verify_email_error') %}
         <div class="alert alert-danger" role="alert">{{ flashError }}</div>
     {% endfor %}
+    <div class="container">
 
     <h1>Register</h1>
 
@@ -20,4 +22,5 @@
 
         <button type="submit" class="btn btn-success">Register</button>
     {{ form_end(registrationForm) }}
+</div>
 {% endblock %}
